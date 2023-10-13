@@ -16,9 +16,9 @@ public class ShiftResponse {
 //    private StaffResponse staff;
     @Column(name = "shift_start_time")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date start_time;
-    @Column(name = "shift_end_time")
+    private Date startTime;
+    @Column(name = "shift_finish_time")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date end_time;
+    private Date finishTime;
 }
 

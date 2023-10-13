@@ -14,9 +14,9 @@ public class StaffResponse {
     @Column(name = "staff_id")
     private long id;
     @Column(name = "staff_first_name")
-    private String first_name;
-    @Column(name = "staff_surname")
-    private String surname;
+    private String firstName;
+    @Column(name = "staff_last_name")
+    private String lastName;
 //    @Temporal(TemporalType.DATE)
 //    private Date dob;
 //    private String street;
@@ -29,7 +29,7 @@ public class StaffResponse {
     private String email;
 //    private String password;
     @Column(name = "staff_provider_number")
-    private String provider_number;
+    private String providerNumber;
     @Column(name = "staff_prescriber_number")
-    private String prescriber_number;
+    private String prescriberNumber;
 }

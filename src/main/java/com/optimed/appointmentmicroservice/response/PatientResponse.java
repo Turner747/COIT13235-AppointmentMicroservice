@@ -10,7 +10,7 @@ public class PatientResponse {
     @Column(name = "patient_id")
     private long id;
     @Column(name = "patient_first_name")
-    private String first_name;
+    private String firstName;
     @Column(name = "patient_surname")
-    private String surname;
+    private String lastName;
 }
