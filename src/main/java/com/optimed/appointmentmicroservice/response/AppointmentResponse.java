@@ -25,5 +25,5 @@ public class AppointmentResponse {
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
     private Date finishTime;
     @Enumerated(EnumType.STRING)
-    private Appointment.AppointmentStatus statusEnum;
+    private Appointment.AppointmentStatus status;
 }

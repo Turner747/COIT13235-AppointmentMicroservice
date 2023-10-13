@@ -1,10 +1,12 @@
 package com.optimed.appointmentmicroservice.controller;
 
+import com.optimed.appointmentmicroservice.feignclient.PatientClient;
 import com.optimed.appointmentmicroservice.feignclient.StaffClient;
 import com.optimed.appointmentmicroservice.mapper.ObjectMapper;
 import com.optimed.appointmentmicroservice.model.Appointment;
 import com.optimed.appointmentmicroservice.repository.AppointmentRepository;
 import com.optimed.appointmentmicroservice.response.AppointmentResponse;
+import com.optimed.appointmentmicroservice.response.PatientResponse;
 import com.optimed.appointmentmicroservice.response.ShiftResponse;
 import com.optimed.appointmentmicroservice.response.StaffResponse;
 import lombok.AllArgsConstructor;
@@ -22,11 +24,14 @@ import java.util.Optional;
 public class AppointmentController {
     private AppointmentRepository appointmentRepo;
     private StaffClient staffClient;
+    private PatientClient patientClient;
     @PostMapping(consumes = "application/json")
     public ResponseEntity<AppointmentResponse> saveAppointment(@RequestBody AppointmentResponse appointmentResponse) {
 
+        PatientResponse patientResponse = ObjectMapper.map(patientClient.getPatientById(appointmentResponse.getPatient().getId()).getBody(), PatientResponse.class);
         ShiftResponse shiftResponse = ObjectMapper.map(staffClient.getShiftById(appointmentResponse.getShift().getId()).getBody(), ShiftResponse.class);
         StaffResponse staffResponse = ObjectMapper.map(staffClient.getStaffByID(appointmentResponse.getDoctor().getId()).getBody(), StaffResponse.class);
+        appointmentResponse.setPatient(patientResponse);
         appointmentResponse.setShift(shiftResponse);
         appointmentResponse.setDoctor(staffResponse);
 

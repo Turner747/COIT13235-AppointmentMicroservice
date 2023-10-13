@@ -11,6 +11,6 @@ public class PatientResponse {
     private long id;
     @Column(name = "patient_first_name")
     private String firstName;
-    @Column(name = "patient_surname")
+    @Column(name = "patient_last_name")
     private String lastName;
 }

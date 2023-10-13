@@ -47,7 +47,8 @@ public class Appointment {
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
     @Column(name = "finish_time")
     private Date finishTime;
-    private AppointmentStatus statusEnum;
+    @Enumerated(EnumType.STRING)
+    private AppointmentStatus status;
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "insert_date", updatable=false)
     @CreationTimestamp
