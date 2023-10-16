@@ -17,17 +17,10 @@ public class StaffResponse {
     private String firstName;
     @Column(name = "staff_last_name")
     private String lastName;
-//    @Temporal(TemporalType.DATE)
-//    private Date dob;
-//    private String street;
-//    private String suburb;
-//    private String state;
-//    private int postcode;
     @Column(name = "staff_phone")
     private String phone;
     @Column(name = "staff_email")
     private String email;
-//    private String password;
     @Column(name = "staff_provider_number")
     private String providerNumber;
     @Column(name = "staff_prescriber_number")
