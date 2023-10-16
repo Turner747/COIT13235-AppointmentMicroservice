@@ -12,5 +12,5 @@ public class PatientResponse {
     @Column(name = "patient_first_name")
     private String firstName;
     @Column(name = "patient_last_name")
-    private String lastName;
+    private String surname;
 }
